@@ -53,12 +53,13 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: python-app
+          path: .
 
-      - name: List files in the artifact
-        run: ls -la
+      # - name: List files in the artifact
+      #   run: ls -la
 
-      - name: Unzip artifact for deployment
-        run: unzip python-app.zip -d ./deploy
+      # - name: Unzip artifact for deployment
+      #   run: unzip python-app.zip -d ./deploy
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
